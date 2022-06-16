@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>HTML List</title>
+   </head>
+	
+   <body> 
+   <caption>
+     unordered list
+     </caption>
+   
+      <ul>
+         <li>Beetroot</li>
+         <li>Ginger</li>
+         <li>Potato</li>
+         <li>Radish</li>
+      </ul>
+      <caption>ordered list</caption>
+      <ol>
+         <li>Beetroot</li>
+         <li>Ginger</li>
+         <li>Potato</li>
+         <li>Radish</li>
+      </ol>
+    </body>
+</html>

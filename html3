@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>application forms</title>
+  </head>
+  <body> 
+  <form>
+    <center>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              Studentnumber
+            </td>
+            <td>
+              <input type="text" name="Studentnumber" maxlength="20" >
+              
+            </td>
+          </tr
+          <tr>
+            <td>
+           password
+            </td>
+            <td>
+              <input type="password" name="Studentpassword" maxlength="20" >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              gender
+            </td>
+            <td>
+              <input type="radio" name="gender" value="male" >male
+              <input type="radio" name="gender" value="female" >female
+              <input type="radio" name="gender" value="others" >others
+            </td>
+          </tr>
+          <tr>
+            <td>
+           address
+           </td>
+            <td>
+              <textarea rows=5 columns=4 >
+              </textarea>
+            </td>
+          </tr>
+           <tr>
+            <td>
+              gender
+            </td>
+            <td>
+              <input type="checkbox" name="departments" value="cse" >
+              <input type="checkbox" name="departments" value="ece" >
+              <input type="checkbox" name="departments" value="eee" >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <input type="submit" value="submit">
+      <input type="reset" value="cancel">
+    </center>
+  </form></body>
+</html>

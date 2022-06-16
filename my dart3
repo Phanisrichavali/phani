@@ -1,0 +1,18 @@
+void main() {
+  Map<String, String> fruits = Map();
+  fruits["apple"] = "green";
+  fruits["mango"] = "green";
+  fruits["mango"] = "yellow";
+  fruits["pineapple"] = "yellow";
+  fruits["banana"] = "yellow";
+  fruits["apple"] = "red";
+  print(' the number of elements are ${fruits.length}');
+  print('the keys in fruits are=>');
+  for (String key in fruits.keys) {
+    print(key);
+  }
+  print('the values in fruits are=>');
+  for (String values in fruits.values) {
+    print(values);
+  }
+}

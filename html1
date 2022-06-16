@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Time Title</title>
+    </head>
+    <body>
+    <table border="2" cellspacing="3" align="center" bordercolor="green">
+
+       
+<tr>
+  <td align="center"bgcolor="orange"><b>Sr.No</b></td>
+  <td align="center" bgcolor="orange"><b>Roll.No</b> </td>
+  <td align="center"bgcolor="orange"><b>Name</b></td>
+  <td align="center"bgcolor="orange"><b>Team</b></td>
+</tr>
+          
+<tr>  
+    <td align="center" bgcolor="orange"><b>1</b></td> 
+       <td align="center">1001</td>
+       <td align="center">phani</td>
+       <td align="center">Red</td>
+</tr>
+          
+<tr>
+    <td align="center" bgcolor="orange"><b>2</b></td> 
+       <td align="center">1002</td>
+       <td align="center">keerthana</td>
+       <td align="center">Blue</td>
+</tr>
+          
+<tr>
+    <td align="center" bgcolor="orange"><b>3</b></td> 
+        <td align="center">1003</td>
+        <td align="center">yasasri</td>
+        <td align="center">Green</td>
+</tr>  
+</table>      
+</body>
+</html>

@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: " Great cities of our Country",
+    home: FavouriteCity(),
+  ));
+}
+
+class FavouriteCity extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _FavoriteCityState();
+  }
+}
+
+class _FavoriteCityState extends State<FavouriteCity> {
+  String nameCity = '';
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(" Great cities "),
+        backgroundColor: Colors.blue,
+      ),
+      body: Container(
+        margin: EdgeInsets.all(20.0),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              onSubmitted: (String userInput) {
+                setState(() {
+                  nameCity = userInput;
+                });
+              },
+            ),
+            Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Text(
+                  "your best City is $nameCity",
+                  style: TextStyle(fontSize: 20.0),
+                ))
+          ],
+        ),
+      ),
+    );
+  }
+}

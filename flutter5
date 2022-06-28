@@ -34,11 +34,11 @@ class _FavoriteCityState extends State<FavouriteCity> {
               },
             ),
             Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Text(
-                  "your best City is $nameCity",
-                  style: TextStyle(fontSize: 20.0),
-                ))
+             padding: EdgeInsets.all(20.0),
+             child: Text(
+             "your best City is $nameCity",
+              style: TextStyle(fontSize: 20.0),
+           ))
           ],
         ),
       ),

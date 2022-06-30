@@ -1,0 +1,167 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+/// main application widget
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  static const String _title = 'Flutter Tutorial';
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: _title,
+      home: MyStatelessWidget(),
+    );
+  }
+}
+
+/// stateless widget that the main application instantiates
+class MyStatelessWidget extends StatelessWidget {
+  const MyStatelessWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    String school = "";
+    return Scaffold(
+      appBar: AppBar(title: const Text(' Student Character Analysis')),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            Text(
+              "Do you like Food??",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, color: Colors.deepPurple),
+              textScaleFactor: 3,
+            ),
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('yes',
+                        style: TextStyle(color: Colors.lightGreenAccent)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'NO',
+                      style:
+                          TextStyle(color: Color.fromARGB(255, 224, 221, 221)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              "Do you like Games??",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 131, 183, 58)),
+              textScaleFactor: 3,
+            ),
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('yes',
+                        style: TextStyle(color: Colors.lightGreenAccent)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'NO',
+                      style:
+                          TextStyle(color: Color.fromARGB(255, 245, 230, 230)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              "Do you like Studies??",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 183, 58, 129)),
+              textScaleFactor: 2,
+            ),
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('yes',
+                        style: TextStyle(color: Colors.lightGreenAccent)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'NO',
+                      style:
+                          TextStyle(color: Color.fromARGB(255, 247, 243, 243)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              "Do you like Exercise:??",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 58, 143, 183)),
+              textScaleFactor: 2,
+            ),
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('yes',
+                        style: TextStyle(color: Colors.lightGreenAccent)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'NO',
+                      style:
+                          TextStyle(color: Color.fromARGB(255, 239, 236, 236)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            TextField(
+              onSubmitted: (String userInput) {
+                school = userInput;
+              },
+            ),
+            Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Text(
+                  "YOUR EXTRA HOBBIES $school",
+                  style: TextStyle(fontSize: 20.0),
+                ))
+          ],
+        ),
+      ),
+    );
+  }
+}

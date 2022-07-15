@@ -1,0 +1,177 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: 'Simple interest calculation',
+    home: SIForm(),
+  ));
+}
+
+class SIForm extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _SIFormState();
+  }
+}
+
+class _SIFormState extends State<SIForm> {
+  var _formkey = GlobalKey<FormState>();
+  TextEditingController principalcontroller = TextEditingController();
+  TextEditingController roicontroller = TextEditingController();
+  TextEditingController termcontroller = TextEditingController();
+  TextEditingController typecontroller = TextEditingController();
+  String displayresult = '';
+  final _minimumPadding = 5.0;
+  double answer = 0.0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        title: Text("Simple interest calculator"),
+      ),
+      body: Form(
+        key: _formkey,
+        child: Column(
+          children: <Widget>[
+            getImageAsset(),
+            Padding(
+                padding: EdgeInsets.only(
+                    top: _minimumPadding, bottom: _minimumPadding),
+                child: TextFormField(
+                  controller: principalcontroller,
+                  keyboardType: TextInputType.number,
+                  validator: (String? value) {
+                    if (value!.isEmpty) {
+                      return 'please enter correct input';
+                    }
+                  },
+                  decoration: InputDecoration(
+                      labelText: 'PRINCIPAL',
+                      hintText: 'enter principal for eg:5000',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0))),
+                )),
+            Padding(
+                padding: EdgeInsets.only(
+                    top: _minimumPadding, bottom: _minimumPadding),
+                child: TextFormField(
+                  controller: roicontroller,
+                  keyboardType: TextInputType.number,
+                  validator: (String? value) {
+                    if (value!.isEmpty) {
+                      return 'please enter correct input';
+                    }
+                  },
+                  decoration: InputDecoration(
+                      labelText: 'RATE OF INTEREST',
+                      hintText: 'enter rate of interest in percent',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0))),
+                )),
+            Padding(
+              padding: EdgeInsets.only(
+                  top: _minimumPadding, bottom: _minimumPadding),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: TextFormField(
+                      controller: termcontroller,
+                      keyboardType: TextInputType.number,
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return 'please enter correct input';
+                        }
+                      },
+                      decoration: InputDecoration(
+                          labelText: 'TIME PERIOD',
+                          hintText: 'enter time period in years',
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0))),
+                    ),
+                  ),
+                  Expanded(
+                    child: TextFormField(
+                      controller: typecontroller,
+                      keyboardType: TextInputType.number,
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return 'please enter correct input';
+                        }
+                      },
+                      decoration: InputDecoration(
+                          labelText: 'CURRENCY TYPE',
+                          hintText: 'DOLLARS/RUPEES',
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0))),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  top: _minimumPadding, bottom: _minimumPadding),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: RaisedButton(
+                      child: Text('calculate'),
+                      onPressed: () {
+                        setState(() {
+                          if (_formkey.currentState!.validate()) {
+                            this.displayresult = _CalculateAns();
+                          }
+                        });
+                      },
+                    ),
+                  ),
+                  Expanded(
+                    child: RaisedButton(
+                      child: Text('RESET'),
+                      onPressed: () {
+                        setState(() {
+                          _reset();
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.all(_minimumPadding), child: Text("7500")),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget getImageAsset() {
+    AssetImage assetImage = AssetImage('images/money.png');
+    Image image = Image(image: assetImage, width: 125.0, height: 125.0);
+    return Container(
+      child: image,
+      margin: EdgeInsets.all(_minimumPadding * 10),
+    );
+  }
+
+  String _CalculateAns() {
+    double principal = double.parse(principalcontroller.text);
+    double roi = double.parse(roicontroller.text);
+    double term = double.parse(termcontroller.text);
+    double type = double.parse(typecontroller.text);
+    double ans = principal + (principal * roi * term) / 100;
+    String result = 'after $term, your investment will be $ans';
+    return result;
+  }
+
+  void _reset() {
+    principalcontroller.text = '';
+    roicontroller.text = '';
+    termcontroller.text = '';
+    typecontroller.text = '';
+    displayresult = '7500';
+  }
+}

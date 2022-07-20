@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      // Remove the debug banner
+      debugShowCheckedModeBanner: false,
+      title: 'Kindacode.com',
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Kindacode.com'),
+      ),
+      body: const Center(),
+      floatingActionButton: SpeedDial(
+          icon: Icons.share,
+          backgroundColor: Colors.amber,
+          children: [
+            SpeedDialChild(
+              child: const Icon(Icons.face),
+              label: 'Social Network',
+              backgroundColor: Colors.amberAccent,
+              onTap: () {/* Do someting */},
+            ),
+            SpeedDialChild(
+              child: const Icon(Icons.email),
+              label: 'Email',
+              backgroundColor: Colors.amberAccent,
+              onTap: () {/* Do something */},
+            ),
+            SpeedDialChild(
+              child: const Icon(Icons.chat),
+              label: 'Message',
+              backgroundColor: Colors.amberAccent,
+              onTap: () {/* Do something */},
+            ),
+          ]),
+    );
+  }
+}
